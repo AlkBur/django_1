@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block body %}
-<form method="post" action="/ask/">
+<form method="post" action="/ask">
     {% csrf_token %}
     <fieldset>
         {{ form.as_ul }}

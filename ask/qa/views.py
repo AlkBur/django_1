@@ -26,7 +26,7 @@ def index(request):
     return render(request, 'index.html', {'page':page})
 
 @require_http_methods(['GET', 'HEAD'])
- def popular(request):
+def popular(request):
      page = request.GET.get('page')
      questions = Question.objects.order_by('-rating')
      paginator = Paginator(questions, 10)
@@ -69,9 +69,9 @@ def answer(request):
             post.save()
             url = post.get_url()
             return HttpResponseRedirect(url)
-        else:
-            form = AnswerForm()
-        return render(request, 'answer.html', RequestContext(request, {'form': form}))
+    else:
+        form = AnswerForm()
+    return render(request, 'answer.html', RequestContext(request, {'form': form}))
     
 def signup(request):
     if request.method == "POST":
@@ -87,9 +87,9 @@ def signup(request):
                 if user.is_active:
                     django_login(request, user)
             return HttpResponseRedirect('/')
-        else:
-            form = RegisterForm()
-        return render(request, 'signup.html', RequestContext(request, {'form': form}))
+    else:
+        form = RegisterForm()
+    return render(request, 'signup.html', RequestContext(request, {'form': form}))
 
 def login(request):
     if request.method == "POST":
