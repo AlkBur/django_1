@@ -1,5 +1,5 @@
 
-m django import forms
+from django import forms
 from qa.models import Question, Answer
 from django.contrib.auth.models import User
 
@@ -16,7 +16,7 @@ class AnswerForm(forms.ModelForm):
         model = Answer
         fields = ['text', 'question']
 
-lass RegisterForm(forms.ModelForm):
+class RegisterForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
     class Meta:
         model = User

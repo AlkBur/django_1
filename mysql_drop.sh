@@ -1,4 +1,4 @@
 #!/bin/bash
-mysql -uroot -e "DROP database myproject;"
-mysql -uroot -e "DROP USER 'box'@'localhost'"
-mysql -uroot -e "FLUSH PRIVILEGES;"
+sudo mysql -uroot -pbox -e "DROP database myproject;"
+sudo mysql -uroot -pbox -e "DROP USER 'box'@'localhost'"
+sudo mysql -uroot -pbox -e "FLUSH PRIVILEGES;"

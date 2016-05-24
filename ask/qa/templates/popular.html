@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block body %}
+<H1>Popular</H1>
+{% for question in page.object_list %}
+    <h2>{{ question.title }}</h2>
+    <p>{{question.text}}</p>
+    <a href="/question/<{{question.id}}>">К ответам</a>
+{% endfor %}
+<h2>{{ page }}</h2>
+{% endblock %}
