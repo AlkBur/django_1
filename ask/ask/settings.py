@@ -87,6 +87,7 @@ DATABASES = {
     }
 }
 
+#TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators

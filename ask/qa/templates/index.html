@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1>New questions</h1>
+{% for question in page.object_list %}
+    <h2>{{ question.title }}</h2>
+    <p>{{question.text}}</p>
+    <a href="/question/{{question.id}}">К ответам</a>
+{% endfor %}
+<p>{{ page }}</p>
+{% endblock %}

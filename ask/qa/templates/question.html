@@ -1,0 +1,18 @@
+{% extends 'qa/base.html' %}
+{% block body %}
+    <h2>{{ question.title }}</h2>
+    <p>{{ question.text }}</p>
+    <p> {{ question.author }}</p>
+    <hr>
+    {% for answer in answers %}
+        <p>{{ answer.text }}</p>
+        <p> {{ answer.author }}</p>
+    {% endfor %}
+    <form method="post" action="/answer">
+    {% csrf_token %}
+    <fieldset>
+    {{ form.as_ul }}
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+    </form>
+{% endblock %}
