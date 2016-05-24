@@ -4,6 +4,7 @@ readonly varPath=~/django_1/
 
 if [ -d ${varPath} ]; then
     mv ${varPath} ~/web
+   sudo /etc/init.d/mysqld restart 
 else
    echo "no path: " ${varPath}
 fi
